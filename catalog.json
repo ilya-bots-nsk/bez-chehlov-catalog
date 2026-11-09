@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T18:10:33",
+ "updated": "2026-11-09T18:34:27",
  "seller": "RogerKry",
  "ranges": [
   {
@@ -76,7 +76,16 @@
    "status": "В продаже",
    "reserved": false,
    "photos": [
-    "images/p199/1.jpg"
+    "images/p199/1.jpg",
+    "images/p199/2.jpg",
+    "images/p199/3.jpg",
+    "images/p199/4.jpg",
+    "images/p199/5.jpg",
+    "images/p199/6.jpg",
+    "images/p199/7.jpg",
+    "images/p199/8.jpg",
+    "images/p199/9.jpg",
+    "images/p199/10.jpg"
    ]
   }
  ]
