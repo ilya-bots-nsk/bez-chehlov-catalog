@@ -1,0 +1,83 @@
+{
+ "updated": "2026-11-09T17:49:12",
+ "seller": "RogerKry",
+ "ranges": [
+  {
+   "code": "to300",
+   "title": "до 300 тыс.",
+   "from": 0,
+   "to": 300000
+  },
+  {
+   "code": "300-600",
+   "title": "300–600 тыс.",
+   "from": 300001,
+   "to": 600000
+  },
+  {
+   "code": "600-1000",
+   "title": "600 тыс.–1 млн",
+   "from": 600001,
+   "to": 1000000
+  },
+  {
+   "code": "from1000",
+   "title": "от 1 млн",
+   "from": 1000001,
+   "to": null
+  }
+ ],
+ "cars": [
+  {
+   "id": "p183",
+   "title": "Жук, 2012",
+   "name": "Жук",
+   "year": "2012",
+   "mileage": "200 000 км",
+   "gearbox": "Вариатор",
+   "price": 1060000,
+   "price_text": "1 060 000 ₽",
+   "description": "• 8 лет в одних руках\n• Кузов весь в родном окрасе\n• Двигатель работает отлично",
+   "link": "https://t.me/bez_chehlov/183",
+   "status": "В продаже",
+   "reserved": false,
+   "photos": [
+    "images/p183/1.jpg"
+   ]
+  },
+  {
+   "id": "p171",
+   "title": "Subaru Impreza WRX, 2011",
+   "name": "Subaru Impreza WRX",
+   "year": "2011",
+   "mileage": "",
+   "gearbox": "Механика",
+   "price": 1700000,
+   "price_text": "1 700 000 ₽",
+   "description": "• Кузов ровный\n• Двигатель в идеальном состоянии\n• Турбина сухая",
+   "link": "https://t.me/bez_chehlov/171",
+   "status": "В продаже",
+   "reserved": false,
+   "photos": [
+    "images/p171/1.jpg"
+   ]
+  },
+  {
+   "id": "p199",
+   "title": "Ford Focus, 2008",
+   "name": "Ford Focus",
+   "year": "2008",
+   "mileage": "200 000 км",
+   "gearbox": "Автомат",
+   "price": 463000,
+   "price_text": "463 000 ₽",
+   "description": "• Максимальная комплектация\n• 6 лет в одной семье\n• Много родного окраса",
+   "link": "https://t.me/bez_chehlov/199",
+   "status": "В продаже",
+   "reserved": false,
+   "photos": [
+    "images/p199/1.jpg"
+   ]
+  }
+ ]
+}
