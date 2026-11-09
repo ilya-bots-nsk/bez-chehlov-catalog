@@ -8,6 +8,7 @@
   var catalog = { cars: [], ranges: [], seller: "" };
   var activeRange = "all";
   var openedCar = null;
+  var pendingIndex = null, pendingAt = 0;  // куда листаем кнопкой/клавишей прямо сейчас
 
   var $ = function (id) { return document.getElementById(id); };
   var grid = $("grid"), state = $("state"), filters = $("filters");
@@ -119,6 +120,7 @@
 
   function openCar(car) {
     openedCar = car;
+    pendingIndex = null;
     gallery.textContent = "";
     var photos = car.photos || [];
     if (photos.length) {
@@ -167,11 +169,37 @@
     if (tg) { try { tg.BackButton.hide(); } catch (e) {} }
   }
 
-  function updateCounter() {
-    var n = gallery.children.length;
-    if (!openedCar || !(openedCar.photos || []).length || n < 2) { counter.textContent = ""; return; }
+  function photoCount() {
+    return openedCar ? (openedCar.photos || []).length : 0;
+  }
+
+  function photoIndex() {
+    var n = photoCount();
     var i = Math.round(gallery.scrollLeft / Math.max(1, gallery.clientWidth));
-    counter.textContent = (Math.min(n - 1, Math.max(0, i)) + 1) + " / " + n;
+    return Math.min(n - 1, Math.max(0, i));
+  }
+
+  function updateCounter() {
+    var n = photoCount();
+    var multi = n > 1;
+    $("prev").hidden = !multi;
+    $("next").hidden = !multi;
+    if (!multi) { counter.textContent = ""; return; }
+    var i = photoIndex();
+    counter.textContent = (i + 1) + " / " + n;
+    $("prev").disabled = i <= 0;
+    $("next").disabled = i >= n - 1;
+  }
+
+  function goPhoto(delta) {
+    var n = photoCount();
+    if (n < 2) return;
+    // при быстрых нажатиях плавная прокрутка ещё идёт — считаем от целевого фото, а не от текущей позиции
+    var base = (pendingIndex != null && Date.now() - pendingAt < 700) ? pendingIndex : photoIndex();
+    var i = Math.min(n - 1, Math.max(0, base + delta));
+    pendingIndex = i;
+    pendingAt = Date.now();
+    gallery.scrollTo({ left: i * gallery.clientWidth, behavior: "smooth" });
   }
 
   function openLink(url, telegramLink) {
@@ -190,7 +218,14 @@
 
   gallery.addEventListener("scroll", updateCounter, { passive: true });
   $("close").addEventListener("click", closeCar);
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !sheet.hidden) closeCar(); });
+  $("prev").addEventListener("click", function () { goPhoto(-1); });
+  $("next").addEventListener("click", function () { goPhoto(1); });
+  document.addEventListener("keydown", function (e) {
+    if (sheet.hidden) return;
+    if (e.key === "Escape") closeCar();
+    else if (e.key === "ArrowLeft") { e.preventDefault(); goPhoto(-1); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); goPhoto(1); }
+  });
   $("car-link").addEventListener("click", function (e) {
     if (!openedCar || !openedCar.link) return;
     e.preventDefault();
