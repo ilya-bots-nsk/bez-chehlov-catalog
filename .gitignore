@@ -1,0 +1,27 @@
+# Витрина публичная: сюда никогда не должны попасть секреты бота.
+.env
+.env.*
+*.env
+# ключи Google и любые другие json, кроме самого каталога
+*.json
+!catalog.json
+*.json.tmp
+*.db
+*.sqlite
+*.sqlite3
+*.cer
+*.pem
+*.key
+*.p12
+*.log
+*.py
+*.pyc
+__pycache__/
+venv/
+.venv/
+photos/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
