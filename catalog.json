@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T12:05:13",
+ "updated": "2026-11-24T18:34:20",
  "seller": "RogerKry",
  "ranges": [
   {
@@ -60,32 +60,6 @@
    "reserved": false,
    "photos": [
     "images/p171/1.jpg"
-   ]
-  },
-  {
-   "id": "p199",
-   "title": "Ford Focus, 2008",
-   "name": "Ford Focus",
-   "year": "2008",
-   "mileage": "200 000 км",
-   "gearbox": "Автомат",
-   "price": 463000,
-   "price_text": "463 000 ₽",
-   "description": "• Максимальная комплектация\n• 6 лет в одной семье\n• Много родного окраса",
-   "link": "https://t.me/bez_chehlov/199",
-   "status": "В продаже",
-   "reserved": false,
-   "photos": [
-    "images/p199/1.jpg",
-    "images/p199/2.jpg",
-    "images/p199/3.jpg",
-    "images/p199/4.jpg",
-    "images/p199/5.jpg",
-    "images/p199/6.jpg",
-    "images/p199/7.jpg",
-    "images/p199/8.jpg",
-    "images/p199/9.jpg",
-    "images/p199/10.jpg"
    ]
   }
  ]
